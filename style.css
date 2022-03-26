@@ -1,10 +1,6 @@
-body* {
-  /* color: var(--fontColor); */
+body {
   font-family: helvetica;
   color: #07001f;
-}
-body {
-    background: var(--bg);
 }
 ul {
     font-family: helvetica;
@@ -12,51 +8,61 @@ ul {
 li {
     list-style: circle;
   } 
-  .list {
-    list-style: square;
-  } 
+.list {
+  list-style: square;
+} 
 
-  /* .light-theme {
-    --bg: var(--blue);
-    --fontColor: var(--black);
-  }
-  .dark-theme {
-    --bg: var(--black);
-    --fontColor: var(--blue);
-  }
-  .light-theme {
-    color: #0f0041;
-    background: #6594ff;
-  } */
+.mode-btn {
+  position: absolute;
+  top: 20px;
+  left: 530px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
 
-  .mode-btn {
-    position: absolute;
-    top: 20px;
-    left: 530px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border: none;
-    /* color: var(--btnFontColor);
-    background-color: var(--btnBg); */
-    padding: 0px;
-  }
-  .btn:focus { outline-style: none; }
-  
-  .light-theme {
-    background: #6594ff;
-    color: #07001f;
-  }
-  /* any element with the class btn within the class light-theme will use this */
-  .light-theme .btn{
-    background: #07001f;
-    color: antiquewhite;
-  }
-  .dark-theme {
-    background: #07001f;
-    color: antiquewhite;
-  }
-  .dark-theme .btn{
-    background: #6594ff;
-    color:#07001f;
-  }
+  padding: 0px;
+}
+.btn:focus { outline-style: none; }
+
+.light-theme {
+  /* background: #6594ff; */
+  color: #07001f;
+  background-image: linear-gradient(to right, rgb(18, 136, 246), rgb(58, 58, 58));
+}
+/* any element with the class btn within the class light-theme will use this */
+.light-theme .btn{
+  background: #07001f;
+  color: antiquewhite;
+}
+.dark-theme {
+  /* background: #07001f; */
+  color: antiquewhite;
+  background-image: linear-gradient(to right,#07001f, rgb(58, 58, 58)); 
+}
+.dark-theme .btn{
+  background: rgb(18, 136, 246);
+  color:#07001f;
+}
+.dark-theme .report{
+  background:#0e0e10;
+  color: antiquewhite;
+  border-color: antiquewhite;
+}
+.report-days{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: #07001f;
+}
+.report{
+  border: solid 2px #07001f;
+  padding: 15px;
+  margin: 5px 5px;
+  border-radius: 5px;
+  background-color: antiquewhite;
+  width: fit-content;
+}
+.report .day{
+  font-size: 30px;
+}   

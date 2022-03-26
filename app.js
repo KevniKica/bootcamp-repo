@@ -51,28 +51,29 @@ async function search(){
 
         const container = document.createElement("div");
         container.id = "report";
+        container.classList.add("report");
 
         const header = document.createElement("h2");
         header.textContent = day.name;
+        header.classList.add("day");
 
-        const temp = document.createElement("h2");
-        temp.textContent = day.temperature;
-
-        const tempUnit = document.createElement("h2");
-        tempUnit.textContent = day.temperatureUnit;
+        const temp = document.createElement("p");
+        temp.textContent = day.temperature + "\xB0" + day.temperatureUnit;
+        temp.classList.add("temp");
         
         const forecast = document.createElement("p");
         forecast.textContent=day.shortForecast;
+        forecast.classList.add("forecast");
 
         const windSpd = document.createElement("p");
-        windSpd.textContent = day.windSpeed;
+        windSpd.textContent = "Wind Speed: " + day.windSpeed;
+        windSpd.classList.add("wind-speed")
 
         container.appendChild(header);
         container.appendChild(temp);
-        container.appendChild(tempUnit);
         container.appendChild(forecast);
         container.appendChild(windSpd);
-        document.querySelector("body").appendChild(container);
+        document.querySelector(".report-days").appendChild(container);
 
     }
 }
