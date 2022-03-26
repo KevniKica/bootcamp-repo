@@ -45,7 +45,7 @@ async function search(){
         weatherReport.remove();
     }
 
-
+    // Lets make a for loop to project the data from the website
 
     for(const day of days){
 
