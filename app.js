@@ -6,6 +6,13 @@ switcher.addEventListener('click', function() {
 });
 const searchBtn = document.querySelector('.search-btn');
 const addressField = document.querySelector('#searchBar');
+function load(){
+    let location = localStorage.getItem("location");
+    let search = localStorage.getItem("search");
+    location = location.replace(/\+/g, " ");
+    addressField.value = location;
+    document.querySelector('#map').src = search;
+}
 
 searchBtn.addEventListener('click', function() {
     search();
@@ -21,6 +28,9 @@ async function search(){
     var search = start+location+end;
     // console.log(search);
     document.querySelector('#map').src = search;
+    localStorage.setItem("location" , location);
+    localStorage.setItem("search" , search);
+    
 
     // Let's get the coordinates of the address they typed in
     var geocoder=new google.maps.Geocoder();
